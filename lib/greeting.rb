@@ -10,4 +10,31 @@
 # morning: 06 - 11: Good Morning!
 # afternoon: 12 - 19: Good Afternoon!
 # night: 20 - 05: Good night
+class Greeting
 
+  def initialize(hour)
+    @hour = hour
+  end
+
+  def say
+    if morning?
+      "Good Morning!"
+    elsif afternoon?
+      "Good Afternoon!"
+    elsif night?
+      "Good Night!"
+    end
+  end
+
+  def morning?
+    @hour >= 6 && @hour <= 11
+  end
+
+  def afternoon?
+    @hour >= 12 && @hour <= 19
+  end
+
+  def night?
+    (@hour >= 20 && @hour <= 24) | (@hour >= 0 && @hour <= 5)
+  end
+end

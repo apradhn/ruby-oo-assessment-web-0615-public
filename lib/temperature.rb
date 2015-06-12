@@ -4,3 +4,19 @@
 
 # The Temperature class should accept the current temperature
 # and respond_to a status method.
+class Temperature
+
+  def initialize(temp)
+    @temp = temp
+  end
+
+  def status
+    if @temp >= 18 && @temp <= 21
+      "comfortable"
+    elsif @temp >= 22
+      "hot"
+    elsif @temp <= 17
+      "cold"
+    end
+  end
+end
